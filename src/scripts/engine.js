@@ -91,7 +91,7 @@ function addListenerHitBox() {
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
-                playSound("hit"); o
+                playSound("hit"); 
             } else {
                 
                 loseLife();
