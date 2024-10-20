@@ -1,3 +1,4 @@
+
 .container {
     display: flex;
     flex-direction: column;
@@ -44,4 +45,106 @@
 .menu-time h2:nth-child(2),
 .menu-score h2:nth-child(2) {
     margin-top: 20px;
+}
+ 
+.restart-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#restart-button {
+    background-color: #f44336;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    background-color: #d32f2f;
+}
+
+
+/* Media Query para telas pequenas (mobile) */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .menu-time, .menu-score, .menu-lives {
+        margin-bottom: 10px;
+    }
+
+    .panel-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .square {
+        height: 100px;
+        width: 100px;
+    }
+
+    .enemy {
+        background-size: contain;
+    }
+}
+
+/* Melhorias para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    .menu h2 {
+        font-size: 1rem;
+    }
+
+
+
+    /* Ajuste para reduzir o tamanho do menu */
+    .menu {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu-lives img {
+        height: 40px;
+    }
+
+    /* Remover o espaçamento entre os quadrados */
+    .panel-row {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .square {
+        height: 80px; /* ou o tamanho que você desejar */
+        width: 80px;
+        border: 1px solid black;
+        background-color: rgb(241, 165, 0);
+        margin: 0; /* Remove todo o espaçamento entre os quadrados */
+        box-sizing: border-box; /* Inclui as bordas no cálculo do tamanho do quadrado */
+        padding: 0; /* Remove qualquer padding dentro do quadrado */
+    }
+    
+    .container {
+        padding: 0; /* Remove o padding extra no container */
+        margin: 0; /* Remove margem do container */
+    }
+
+/* Corrigir a repetição do personagem */
+.enemy {
+    background-image: url("../imagens/ralph.png");
+    background-size: cover; /* Certifica-se que o fundo cobre todo o quadrado */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: center; /* Centraliza o personagem no quadrado */
+}
+
 }

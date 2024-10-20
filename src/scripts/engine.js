@@ -70,7 +70,7 @@ function loseLife() {
         state.values.loseLifeCooldown = true;
         state.values.lives--;
         state.view.lives.textContent = `x${state.values.lives}`;
-        playSound("game-over"); // Chama o som de perda de vida
+        
 
         if (state.values.lives === 0) {
             clearInterval(state.actions.timerId);
@@ -103,5 +103,31 @@ function addListenerHitBox() {
 function initialize() {
     addListenerHitBox();
 }
+
+
+function restartGame(){
+
+    state.values.result =0;
+    state.values.curretTime = 60;
+    state.values.lives = 3;
+    state.view.timeLeft.textContent = state.values.curretTime;
+    state.view.score.textContent = state.values.result;
+    state.view.lives.textContent = `x${state.values.lives}`;
+    
+    state.view.squares.forEach((square) => {
+        square.classList.remove("enemy", "power-up");
+    });
+
+    clearInterval(state.actions.timerId);
+    clearInterval(state.actions.countDownTimerId);
+
+    state.actions.timerId = setInterval(randomSquare, state.values.gameVelocity);
+    state.actions.countDownTimerId = setInterval(countDown, 1000);
+
+    alert("Jogo reiniciado!");
+}
+
+// Adiciona o evento de clique no botão de reiniciar
+document.getElementById("restart-button").addEventListener("click", restartGame);
 
 initialize();
