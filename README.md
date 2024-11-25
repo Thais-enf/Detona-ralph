@@ -11,5 +11,3 @@ Interface moderna e fluida com visual autêntico do mundo dos arcades 🎨
 Fiquem ligados, em breve mais novidades! 🎉
 Agradeço sugestões e Feedbacks. Confira aqui:
 <br>
-<img src="https://github.com/Thais-enf/tela-login/blob/f1c0c136d3332cd666b4fa7d13e151bcba3b1169/Macbook.png" width=590px;>
-<br>
